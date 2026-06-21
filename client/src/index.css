@@ -1,0 +1,81 @@
+/* =========================================
+   NOVA DINING: GLOBAL DESIGN FOUNDATION
+   ========================================= */
+
+/* Import premium typography */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  min-height: 100vh;
+  /* Smooth scrolling for a luxury feel */
+  scroll-behavior: smooth;
+}
+
+body {
+  /* Set the foundation: Deep Void */
+  background: #000000;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Elegant selection color */
+::selection {
+  background: #E8C37D;
+  color: #000000;
+}
+
+/* Typography Reset */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+}
+
+/* Custom Scrollbar for all devices */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #E8C37D;
+}
+
+/* Global Utility for Image scaling */
+img {
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Global Heading Font Fix */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
