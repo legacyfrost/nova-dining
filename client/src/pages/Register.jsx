@@ -21,7 +21,7 @@ function Register() {
   const [sent, setSent] = useState(false);
 
   const getCode = async () => {
-    const res = await fetch("http://localhost:5000/api/users/register", {
+    const res = await fetch("https://nova-dining-production.up.railway.app/api/users/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -49,7 +49,7 @@ function Register() {
       return;
     }
 
-    const res = await fetch("http://localhost:5000/api/users/verify", {
+    const res = await fetch("https://nova-dining-production.up.railway.app/api/users/verify", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

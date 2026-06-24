@@ -30,7 +30,7 @@ export default function AdminDashboard() {
   }, []);
 
   const loadTables = () => {
-    fetch("http://localhost:5000/api/admin/tables", {
+    fetch("https://nova-dining-production.up.railway.app/api/admin/tables", {
       headers: {
         Authorization: "Bearer " + token,
       },
@@ -42,7 +42,7 @@ export default function AdminDashboard() {
 
   const addTable = async () => {
     if (!number || !seats) return;
-    await fetch("http://localhost:5000/api/admin/tables", {
+    await fetch("https://nova-dining-production.up.railway.app/api/admin/tables", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -62,7 +62,7 @@ export default function AdminDashboard() {
   const deleteTable = async (id) => {
     if (!window.confirm("Remove this table from the floor plan?")) return;
 
-    await fetch(`http://localhost:5000/api/admin/tables/${id}`, {
+    await fetch(`https://nova-dining-production.up.railway.app/api/admin/tables/${id}`, {
       method: "DELETE",
       headers: {
         Authorization: "Bearer " + token,
@@ -73,7 +73,7 @@ export default function AdminDashboard() {
   };
 
   const unbook = async (id) => {
-    await fetch(`http://localhost:5000/api/admin/tables/${id}/unbook`, {
+    await fetch(`https://nova-dining-production.up.railway.app/api/admin/tables/${id}/unbook`, {
       method: "PUT",
       headers: {
         Authorization: "Bearer " + token,

@@ -43,7 +43,7 @@ function ManageTables() {
   const token = localStorage.getItem("token");
 
   const loadTables = async () => {
-    const res = await fetch("http://localhost:5000/api/admin/tables", {
+    const res = await fetch("https://nova-dining-production.up.railway.app/api/admin/tables", {
       headers: {
         Authorization: "Bearer " + token
       }
@@ -58,7 +58,7 @@ function ManageTables() {
   }, []);
 
   const addTable = async () => {
-    await fetch("http://localhost:5000/api/admin/tables", {
+    await fetch("https://nova-dining-production.up.railway.app/api/admin/tables", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -79,7 +79,7 @@ function ManageTables() {
     const value = prompt("Enter new number of seats:");
     if (!value) return;
 
-    await fetch(`http://localhost:5000/api/admin/tables/${id}`, {
+    await fetch(`https://nova-dining-production.up.railway.app/api/admin/tables/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -94,7 +94,7 @@ function ManageTables() {
   };
 
   const unbook = async (id) => {
-    await fetch(`http://localhost:5000/api/admin/tables/${id}/unbook`, {
+    await fetch(`https://nova-dining-production.up.railway.app/api/admin/tables/${id}/unbook`, {
       method: "PUT",
       headers: {
         Authorization: "Bearer " + token
@@ -107,7 +107,7 @@ function ManageTables() {
   const removeTable = async (id) => {
     if (!window.confirm("Are you sure you want to permanently delete this table?")) return;
 
-    await fetch(`http://localhost:5000/api/admin/tables/${id}`, {
+    await fetch(`https://nova-dining-production.up.railway.app/api/admin/tables/${id}`, {
       method: "DELETE",
       headers: {
         Authorization: "Bearer " + token

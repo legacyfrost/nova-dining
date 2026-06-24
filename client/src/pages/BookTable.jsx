@@ -38,7 +38,7 @@ function BookTable() {
 
   const loadTables = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/tables", {
+      const res = await fetch("https://nova-dining-production.up.railway.app/api/tables", {
         headers: {
           Authorization: "Bearer " + token,
         },
@@ -66,7 +66,7 @@ function BookTable() {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/api/reservations", {
+      const response = await fetch("https://nova-dining-production.up.railway.app/api/reservations", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

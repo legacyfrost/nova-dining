@@ -44,7 +44,7 @@ function History() {
   const loadReservations = () => {
     if (!user) return;
 
-    fetch(`http://localhost:5000/api/reservations/${user.id}`, {
+    fetch(`https://nova-dining-production.up.railway.app/api/reservations/${user.id}`, {
       headers: {
         Authorization: "Bearer " + localStorage.getItem("token")
       }
@@ -65,7 +65,7 @@ function History() {
   const cancelReservation = async (id) => {
     if (!window.confirm("Are you sure you wish to release this allocation?")) return;
 
-    const response = await fetch(`http://localhost:5000/api/reservations/${id}`, {
+    const response = await fetch(`https://nova-dining-production.up.railway.app/api/reservations/${id}`, {
       method: "DELETE",
       headers: {
         Authorization: "Bearer " + localStorage.getItem("token")
