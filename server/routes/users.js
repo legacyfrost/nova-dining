@@ -391,14 +391,12 @@ is_super_admin:user.is_super_admin
 
 });
 
-}catch(err){
-
-res.status(500).json({
-
-error:err.message
-
-});
-
+}
+catch(err){
+  console.log("LOGIN ERROR:", err);
+  res.status(500).json({
+    error: err.message
+  });
 }
 
 });
