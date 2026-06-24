@@ -48,7 +48,7 @@ function SuperAdmin() {
   }, []);
 
   const loadUsers = () => {
-    fetch("http://localhost:5000/api/admin/super/users", {
+    fetch("https://nova-dining-production.up.railway.app/api/admin/super/users", {
       headers: { Authorization: "Bearer " + token }
     })
       .then((res) => res.json())
@@ -57,7 +57,7 @@ function SuperAdmin() {
   };
 
   const loadLogs = () => {
-    fetch("http://localhost:5000/api/admin/activity", {
+    fetch("https://nova-dining-production.up.railway.app/api/admin/activity", {
       headers: { Authorization: "Bearer " + token }
     })
       .then((res) => res.json())
@@ -68,7 +68,7 @@ function SuperAdmin() {
   const makeAdmin = async (id) => {
     if (!window.confirm("Are you sure you want to make this user an Admin?")) return;
     
-    await fetch(`http://localhost:5000/api/admin/super/make-admin/${id}`, {
+    await fetch(`https://nova-dining-production.up.railway.app/api/admin/super/make-admin/${id}`, {
       method: "PUT",
       headers: { Authorization: "Bearer " + token }
     });
@@ -78,7 +78,7 @@ function SuperAdmin() {
   const removeAdmin = async (id) => {
     if (!window.confirm("Are you sure you want to remove Admin rights from this user?")) return;
 
-    await fetch(`http://localhost:5000/api/admin/super/remove-admin/${id}`, {
+    await fetch(`https://nova-dining-production.up.railway.app/api/admin/super/remove-admin/${id}`, {
       method: "PUT",
       headers: { Authorization: "Bearer " + token }
     });
@@ -87,8 +87,8 @@ function SuperAdmin() {
 
   const deleteUser = async (id) => {
     if (!window.confirm("Are you sure you want to permanently delete this user?")) return;
-
-    await fetch(`http://localhost:5000/api/admin/super/delete-user/${id}`, {
+https://nova-dining-production.up.railway.app
+    await fetch(`/api/admin/super/delete-user/${id}`, {
       method: "DELETE",
       headers: { Authorization: "Bearer " + token }
     });
